@@ -15,10 +15,18 @@ class CartScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           children: const [
             CustomCardWidget(),
-            SizedBox(
-              height: 10,
-            ),
-            CustomCardWidget2()
+            SizedBox(height: 10),
+            CustomCardWidget2(),
+            SizedBox(height: 10),
+            CustomCardWidget2(),
+            SizedBox(height: 10),
+            CustomCardWidget2(),
+            SizedBox(height: 10),
+            CustomCardWidget2(),
+            SizedBox(height: 10),
+            CustomCardWidget2(),
+            SizedBox(height: 10),
+            CustomCardWidget2(),
           ]),
     );
   }
