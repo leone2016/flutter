@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_componentes/widgets/widgets.dart';
 
 class CartScreen extends StatelessWidget {
+  static const imag1 =
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/stan-lee-wandavision-cameo-tributo-homenaje-1614077568.jpg";
+
   const CartScreen({Key? key}) : super(key: key);
 
   @override
@@ -16,17 +19,22 @@ class CartScreen extends StatelessWidget {
           children: const [
             CustomCardWidget(),
             SizedBox(height: 10),
-            CustomCardWidget2(),
+            CustomCardWidget2(
+              imageUrl: imag1,
+              labelCard: "Creador del MCU",
+            ),
             SizedBox(height: 10),
-            CustomCardWidget2(),
+            CustomCardWidget2(
+              imageUrl: imag1,
+            ),
             SizedBox(height: 10),
-            CustomCardWidget2(),
+            CustomCardWidget2(
+              imageUrl: imag1,
+            ),
             SizedBox(height: 10),
-            CustomCardWidget2(),
-            SizedBox(height: 10),
-            CustomCardWidget2(),
-            SizedBox(height: 10),
-            CustomCardWidget2(),
+            CustomCardWidget2(
+              imageUrl: imag1,
+            ),
           ]),
     );
   }

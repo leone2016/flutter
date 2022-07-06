@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_componentes/theme/app_theme.dart';
 
 class CustomCardWidget2 extends StatelessWidget {
-  const CustomCardWidget2({Key? key}) : super(key: key);
+  final String imageUrl;
+  final String? labelCard;
+
+  const CustomCardWidget2({Key? key, required this.imageUrl, this.labelCard})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +20,9 @@ class CustomCardWidget2 extends StatelessWidget {
       child: Column(
         children: [
           //ImageProvider: permite especificar donde se encuentra la imagen
-          const FadeInImage(
-            image: NetworkImage(
-                'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/stan-lee-wandavision-cameo-tributo-homenaje-1614077568.jpg'),
-            placeholder: AssetImage("assets/images/jar-loading.gif"),
+          FadeInImage(
+            image: NetworkImage(imageUrl),
+            placeholder: const AssetImage("assets/images/jar-loading.gif"),
             // funciona cuando el width es limitado
             width: double.infinity,
             //230px, esto puede crear un marco, para eso se usa fit
@@ -27,10 +30,12 @@ class CustomCardWidget2 extends StatelessWidget {
             fit: BoxFit.cover,
             // fadeInDuration: Duration(microseconds: 300),
           ),
-          Container(
-              alignment: AlignmentDirectional.centerEnd,
-              padding: const EdgeInsets.only(right: 20, top: 20, bottom: 10),
-              child: const Text("Creador del MCU"))
+          if (labelCard != null)
+            Container(
+                alignment: AlignmentDirectional.centerEnd,
+                padding: const EdgeInsets.only(right: 20, top: 20, bottom: 10),
+                child: Text(
+                    labelCard!)) // con el signo de admiración se le dice a flutter que deje pasar el valor null
         ],
       ),
     );
