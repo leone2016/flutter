@@ -42,7 +42,10 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
         title: Text("Animated Container"),
       ),
       body: Center(
-         child: Container(
+         child: AnimatedContainer(
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOutCubic,
+          // curve: Curves.elasticInOut, //tener  cuidado cuando elasticOut el elemento es muy delgado puede dar error
           height: _heigth,
           width: _width,
           //color: Colors.white, no se puede tener un color y una decoración en este widget
