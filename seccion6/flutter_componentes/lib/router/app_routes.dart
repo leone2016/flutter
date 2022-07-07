@@ -13,9 +13,11 @@ class AppRoutes {
     MenuOption(
         route: 'alert', icon: Icons.add_alert_outlined, name: 'Alertas', screen: const AlertScreen()),
     MenuOption(
-        route: 'Card', icon: Icons.credit_card, name: 'Tarjetas - card', screen: const CartScreen()),
+        route: 'card', icon: Icons.credit_card, name: 'Tarjetas - card', screen: const CartScreen()),
     MenuOption(
-        route: 'Avatar', icon: Icons.supervised_user_circle_outlined, name: 'Circle Avatar', screen: const AvatarScreen())
+        route: 'avatar', icon: Icons.supervised_user_circle_outlined, name: 'Circle Avatar', screen: const AvatarScreen()),
+    MenuOption(
+        route: 'animated', icon: Icons.play_arrow_outlined, name: 'Animated Container', screen: const AnimatedScreen())
   ];
 
   static const initialRoute = 'home';
