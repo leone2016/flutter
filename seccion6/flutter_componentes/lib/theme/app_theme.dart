@@ -8,7 +8,7 @@ class AppTheme {
       primaryColor: Colors.green,
 
       //AppBar
-      appBarTheme: const AppBarTheme(color: primary, elevation: 0),
+      appBarTheme: const AppBarTheme(color: primary, elevation: 0, centerTitle: true),
       scaffoldBackgroundColor: Colors.black,
       textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(primary: primary)),
       //color para botones flotantes

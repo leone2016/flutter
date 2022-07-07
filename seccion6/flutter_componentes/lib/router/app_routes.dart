@@ -5,30 +5,17 @@ import 'package:flutter_componentes/screens/index.dart';
 class AppRoutes {
   static final menuOptions = <MenuOption>[
     MenuOption(
-        route: 'home',
-        icon: Icons.home,
-        name: 'Home Screen',
-        screen: const HomeScreen()),
+        route: 'home',icon: Icons.home,name: 'Home Screen',screen: const HomeScreen()),
     MenuOption(
-        route: 'listView1',
-        icon: Icons.list,
-        name: 'Listview tipo 1',
-        screen: const ListViewScreen()),
+        route: 'listView1',icon: Icons.list,name: 'Listview tipo 1',screen: const ListViewScreen()),
     MenuOption(
-        route: 'listView2',
-        icon: Icons.list_alt,
-        name: 'Listview tipo 2',
-        screen: const ListView2Screen()),
+        route: 'listView2',icon: Icons.list_alt,name: 'Listview tipo 2',screen: const ListView2Screen()),
     MenuOption(
-        route: 'alert',
-        icon: Icons.add_alert_outlined,
-        name: 'Alertas',
-        screen: const AlertScreen()),
+        route: 'alert', icon: Icons.add_alert_outlined, name: 'Alertas', screen: const AlertScreen()),
     MenuOption(
-        route: 'Card',
-        icon: Icons.credit_card,
-        name: 'Tarjetas - card',
-        screen: const CartScreen())
+        route: 'Card', icon: Icons.credit_card, name: 'Tarjetas - card', screen: const CartScreen()),
+    MenuOption(
+        route: 'Avatar', icon: Icons.supervised_user_circle_outlined, name: 'Circle Avatar', screen: const AvatarScreen())
   ];
 
   static const initialRoute = 'home';
