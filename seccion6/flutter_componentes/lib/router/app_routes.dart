@@ -4,8 +4,8 @@ import 'package:flutter_componentes/screens/index.dart';
 
 class AppRoutes {
   static final menuOptions = <MenuOption>[
-    MenuOption(
-        route: 'home',icon: Icons.home,name: 'Home Screen',screen: const HomeScreen()),
+   /*  MenuOption(
+        route: 'home',icon: Icons.home,name: 'Home Screen',screen: const HomeScreen()), */
     MenuOption(
         route: 'listView1',icon: Icons.list,name: 'Listview tipo 1',screen: const ListViewScreen()),
     MenuOption(
@@ -17,13 +17,16 @@ class AppRoutes {
     MenuOption(
         route: 'avatar', icon: Icons.supervised_user_circle_outlined, name: 'Circle Avatar', screen: const AvatarScreen()),
     MenuOption(
-        route: 'animated', icon: Icons.play_arrow_outlined, name: 'Animated Container', screen: const AnimatedScreen())
+        route: 'animated', icon: Icons.play_arrow_outlined, name: 'Animated Container', screen: const AnimatedScreen()),  
+    MenuOption(
+        route: 'inputs', icon: Icons.input_rounded, name: 'Text inputs', screen: const InputsScreen())
   ];
 
   static const initialRoute = 'home';
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
+      appRoutes.addAll({'home': (BuildContext context) => const HomeScreen()});
 
     for (var option in menuOptions) {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
