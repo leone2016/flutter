@@ -8,6 +8,8 @@ class CustomInputWidget extends StatelessWidget {
   final IconData? icon;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
+  final TextInputType? keyboardType;
+  final bool obscureText;
 
   /*
   valores opcionales this.labelText, this.helperText, this.counterText
@@ -20,7 +22,7 @@ class CustomInputWidget extends StatelessWidget {
     this.counterText,
     this.icon,
     this.prefixIcon,
-    this.suffixIcon,
+    this.suffixIcon, this.keyboardType, this.obscureText = false,
   }) : super(key: key);
 
   @override
@@ -29,6 +31,8 @@ class CustomInputWidget extends StatelessWidget {
       autofocus: false,
       initialValue: '',
       textCapitalization: TextCapitalization.words,
+      keyboardType: keyboardType,
+      obscureText: obscureText,
       onChanged: (value) {
         print(value);
       },
