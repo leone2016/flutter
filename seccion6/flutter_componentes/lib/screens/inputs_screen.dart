@@ -17,7 +17,7 @@ class InputsScreen extends StatelessWidget {
       'role': 'Admin',
     };
     return Scaffold(
-      appBar: AppBar(title: Text('Inputs and forms')),
+      appBar: AppBar(title: const Text('Inputs and forms')),
       // SingleChildScrollView: funciona como si se tuviera un listview para hacer scroll
       body: SingleChildScrollView(
         child: Padding(
@@ -31,7 +31,7 @@ class InputsScreen extends StatelessWidget {
                   labelText: 'Nombre',
                   hintText: 'Nombre de Usuario', formProperty: 'first_name', formValues: formValues,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                     ),
                 CustomInputWidget(
@@ -39,7 +39,7 @@ class InputsScreen extends StatelessWidget {
                   hintText: 'Apellido de Usuario',
                   formProperty: 'last_name', formValues: formValues
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 CustomInputWidget(
@@ -48,7 +48,7 @@ class InputsScreen extends StatelessWidget {
                   keyboardType: TextInputType.emailAddress,
                     formProperty: 'email', formValues: formValues
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 CustomInputWidget(
@@ -57,7 +57,22 @@ class InputsScreen extends StatelessWidget {
                     obscureText: true,
                     formProperty: 'password', formValues: formValues
                 ),
-                SizedBox(
+                const SizedBox(
+                  height: 30,
+                ),  
+               DropdownButtonFormField<String>(
+                   value: 'Admin',
+                   items: const [
+                     DropdownMenuItem(value: "Superuser",child: Text("SuperUser")),
+                     DropdownMenuItem(value: "Admin",child: Text("Admin")),
+                     DropdownMenuItem(value: "Developer",child: Text("Developer")),
+                     DropdownMenuItem(value: "Jr. Developer",child: Text("Jr. Developer")),
+                   ],
+                   onChanged: (value){
+                     print(value);
+                     formValues['role'] = value ?? 'Admin';
+               }),
+                const SizedBox(
                   height: 30,
                 ),
                 ElevatedButton(
@@ -73,9 +88,9 @@ class InputsScreen extends StatelessWidget {
                       //* recordar que los valores son pasados por referencia
                       print(formValues);
                     },
-                    child: SizedBox(
+                    child: const SizedBox(
                       width: double.infinity,
-                      child: Center(child: Text("Guardar")))
+                      child: const Center(child: Text("Guardar")))
                 )
               ],
             ),
