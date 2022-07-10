@@ -29,14 +29,15 @@ class InputsScreen extends StatelessWidget {
               children:  [
                 CustomInputWidget(
                   labelText: 'Nombre',
-                  hintText: 'Nombre de Usuario',
+                  hintText: 'Nombre de Usuario', formProperty: 'first_name', formValues: formValues,
                 ),
                 SizedBox(
                   height: 30,
                     ),
-                    CustomInputWidget(
+                CustomInputWidget(
                   labelText: 'Apellido',
                   hintText: 'Apellido de Usuario',
+                  formProperty: 'last_name', formValues: formValues
                 ),
                 SizedBox(
                   height: 30,
@@ -45,6 +46,7 @@ class InputsScreen extends StatelessWidget {
                   labelText: 'Correo',
                   hintText: 'Correo de Usuario',
                   keyboardType: TextInputType.emailAddress,
+                    formProperty: 'email', formValues: formValues
                 ),
                 SizedBox(
                   height: 30,
@@ -52,7 +54,9 @@ class InputsScreen extends StatelessWidget {
                 CustomInputWidget(
                     labelText: 'Contraseña',
                     hintText: 'Contraseña de Usuario',
-                    obscureText: true),
+                    obscureText: true,
+                    formProperty: 'password', formValues: formValues
+                ),
                 SizedBox(
                   height: 30,
                 ),
@@ -66,6 +70,7 @@ class InputsScreen extends StatelessWidget {
                         return;
                       }
                       //* imprimir valores del fermulario
+                      //* recordar que los valores son pasados por referencia
                       print(formValues);
                     },
                     child: SizedBox(

@@ -11,6 +11,12 @@ class CustomInputWidget extends StatelessWidget {
   final TextInputType? keyboardType;
   final bool obscureText;
 
+  // manejo de datos en el formulario
+  // formProperty es la propiedad a la cual va apuntar el formulario
+  final String formProperty;
+  // formValues: sirve para obtener todos los valores del formulario
+  final Map<String, String> formValues;
+
   /*
   valores opcionales this.labelText, this.helperText, this.counterText
    */
@@ -23,6 +29,7 @@ class CustomInputWidget extends StatelessWidget {
     this.icon,
     this.prefixIcon,
     this.suffixIcon, this.keyboardType, this.obscureText = false,
+    required this.formProperty, required this.formValues,
   }) : super(key: key);
 
   @override
@@ -34,7 +41,8 @@ class CustomInputWidget extends StatelessWidget {
       keyboardType: keyboardType,
       obscureText: obscureText,
       onChanged: (value) {
-        print(value);
+        // recordar que los datos son pasados por referencia
+        formValues[formProperty] = value;
       },
       validator: (value) {
         if (value == null) return 'Este campo es requerido';
